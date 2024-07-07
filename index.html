@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Taskbar -->
+    <header class="header">
+        <div class="taskbar">
+            <div>
+                <a href="#Empty" class="taskbar__link" style="color: black;"> Empty</a>
+                <a href="#home" class="taskbar__link"><img src="\assets\home.png" alt="" width="20vw" height="20vh"></a>
+            </div>
+
+            <div>
+                <a href="#Empty" class="taskbar__link"><img src="\assets\home.png" alt="" width="20vw"
+                        height="20vh"></a>
+                <a href="#contact" class="taskbar__link">Contact</a>
+                <span class="taskbar__menu-icon" id="menu-icon">&#9776;</span>
+            </div>
+        </div>
+
+        <div class="taskbar__hidden-menu" id="hidden-menu">
+            <a href="#home" style="color: black;">Empty</a>
+            <a href="#homepage" style="color: black;">Slideshow</a>
+            <a href="#contact" style="color: black;">Contact</a>
+        </div>
+    </header>
+    <!-- Slideshow container -->
+    <div id="homepage" class="slideshow-container reveal">
+
+        <div class="Slides fade">
+            <img src="\assets\pexels-martinpechy-1866149.jpg" style="height:800px;width:100%">
+        </div>
+
+        <div class="Slides fade">
+            <img src="\assets\pexels-ilya-shakir-1278798-2440471.jpg" style="height: 800px;;width:100%">
+        </div>
+
+        <div class="Slides fade">
+            <img src="\assets\pexels-kamo11235-667838.jpg" style="height:800px;width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="container__dot">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top-btn" onclick="topFunction()">⬆</button>
+
+    <!-- Landing Page -->
+    <div id="Empty" class="landing">
+        <div style="color: black;">Welcome to Our Website</div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Automatic slideshow
+        let autoSlideIndex = 0;
+        autoShowSlides();
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("Slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function autoShowSlides() {
+            let i;
+            let slides = document.getElementsByClassName("Slides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            autoSlideIndex++;
+            if (autoSlideIndex > slides.length) {
+                autoSlideIndex = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[autoSlideIndex - 1].style.display = "block";
+            dots[autoSlideIndex - 1].className += " active";
+            setTimeout(autoShowSlides, 4000); // Change image every 4 seconds
+        }
+
+        // Scroll to reveal
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+
+        // Hamburger menu
+        const menuIcon = document.getElementById('menu-icon');
+        const hiddenMenu = document.getElementById('hidden-menu');
+
+        menuIcon.addEventListener('click', () => {
+            hiddenMenu.classList.toggle('taskbar__hidden-menu--visible');
+        });
+
+        // Back to top button
+        var mybutton = document.getElementById("back-to-top-btn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+
+</html>
