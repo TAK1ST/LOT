@@ -7,41 +7,89 @@
 </head>
 
 <body>
-    <!-- Taskbar -->
     <header class="header">
-        <div class="taskbar">
-            <div>
-                <a href="#Empty" class="taskbar__link" style="color: black;"> Empty</a>
-                <a href="#home" class="taskbar__link"><img src="\assets\home.png" alt="" width="20vw" height="20vh"></a>
+        <div class="header__container">
+            <div class="header__left">
+                <a href="#home" class="header__logo"><img src="./assets/home.png" alt="Home" class="header__icon"
+                        id="homepage"></a>
+                <div class="header__nav">
+                    <div class="dropdown header__dropdown">
+                        <button class="header__dropbtn">SHOP&#x25BC;</button>
+                        <div class="dropdown-content header__dropdown-content">
+                            <a href="#all-lots">All LOTs</a>
+                            <a href="#new-in">New In</a>
+                            <a href="#featured">Featured</a>
+                            <a href="#accessories">Accessories</a>
+                        </div>
+                    </div>
+                    <div class="dropdown header__dropdown">
+                        <button class="header__dropbtn">HOW TO&#x25BC;</button>
+                        <div class="dropdown-content header__dropdown-content">
+                            <a href="#BuyonLOT">Buy on LOT</a>
+                            <a href="#SellonLOT">Sell on LOT</a>
+                            <a href="#AdjustYourListing">Adjust Your Listing</a>
+                        </div>
+                    </div>
+                    <div class="dropdown header__dropdown">
+                        <button class="header__dropbtn">LIST AN ITEM&#x25BC;</button>
+                        <div class="dropdown-content header__dropdown-content">
+                            <a href="#ManageYourListing">Manage Your Listing</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <a href="#Empty" class="taskbar__link"><img src="\assets\home.png" alt="" width="20vw"
-                        height="20vh"></a>
-                <a href="#contact" class="taskbar__link">Contact</a>
-                <span class="taskbar__menu-icon" id="menu-icon">&#9776;</span>
+            <div class="header__center">
+                <h1 class="header__title">LOT</h1>
+            </div>
+            <div class="header__right">
+                <a href="#facebook" class="header__link"><img src=".\assets\social-media.png" alt="Facebook"
+                        class="header__icon" id="facebook"></a>
+                <a href="#instagram" class="header__link"><img src="./assets/instagram.png" alt="Instagram"
+                        class="header__icon" id="instagram"></a>
+                <select class="dropdown header__dropdown" style="font-size: larger;">
+                    <option>GBP</option>
+                    <option selected>USD</option>
+                    <option>EUR</option>
+                </select>
+                <a href="#search" class="header__link"><img src=".\assets\search-interface-symbol.png" alt="Search"
+                        class="header__icon" id="search"></a>
+                <a href="#profile" class="header__link"><img src=".\assets\user.png" alt="Profile" class="header__icon"
+                        id="profile"></a>
+                <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
+                        class="header__icon" id="cart"></a>
             </div>
         </div>
-
-        <div class="taskbar__hidden-menu" id="hidden-menu">
-            <a href="#home" style="color: black;">Empty</a>
-            <a href="#homepage" style="color: black;">Slideshow</a>
-            <a href="#contact" style="color: black;">Contact</a>
-        </div>
+        <!-- hambuger menu reponsive -->
+        <nav class="repo__header">
+            <div class="header-left--repo">
+                <button class="menu-icon">&#9776;</button>
+                <!-- <span class="search-icon">&#128269;</span> -->
+                <a href="#search" class="header__link"><img src=".\assets\search-interface-symbol.png" alt="Search"
+                        class="header__icon" id="search-repo"></a>
+            </div>
+            <div class="logo">LOT</div>
+            <div class="header-icons-repo">
+                <!-- <span class="user-icon">&#128100;</span>
+                <span class="cart-icon">&#128722;</span> -->
+                <a href="#profile" class="header__link"><img src=".\assets\user.png" alt="Profile" class="header__icon"
+                        id="profile-repo"></a>
+                <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
+                        class="header__icon" id="cart-repo"></a>
+            </div>
+        </nav>
     </header>
     <!-- Slideshow container -->
-    <div id="homepage" class="slideshow-container reveal">
-
+    <div id="homepage" class="slideshow-container">
         <div class="Slides fade">
-            <img src="\assets\pexels-martinpechy-1866149.jpg" style="height:800px;width:100%">
+            <img src=".\assets\pexels-martinpechy-1866149.jpg" style="margin-left:5%; height:70%;width:90%">
         </div>
 
         <div class="Slides fade">
-            <img src="\assets\pexels-ilya-shakir-1278798-2440471.jpg" style="height: 800px;;width:100%">
+            <img src=".\assets\pexels-ilya-shakir-1278798-2440471.jpg" style="margin-left:5% ;height: 70%;;width:90%">
         </div>
 
         <div class="Slides fade">
-            <img src="\assets\pexels-kamo11235-667838.jpg" style="height:800px;width:100%">
+            <img src=".\assets\pexels-kamo11235-667838.jpg" style="margin-left:5%; height:70%;width:90%">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -58,112 +106,60 @@
     <button id="back-to-top-btn" onclick="topFunction()">⬆</button>
 
     <!-- Landing Page -->
-    <div id="Empty" class="landing">
+    <div id="Empty" class="landing reveal">
         <div style="color: black;">Welcome to Our Website</div>
     </div>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        // Automatic slideshow
-        let autoSlideIndex = 0;
-        autoShowSlides();
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("Slides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace("active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-
-        function autoShowSlides() {
-            let i;
-            let slides = document.getElementsByClassName("Slides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            autoSlideIndex++;
-            if (autoSlideIndex > slides.length) {
-                autoSlideIndex = 1;
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[autoSlideIndex - 1].style.display = "block";
-            dots[autoSlideIndex - 1].className += " active";
-            setTimeout(autoShowSlides, 4000); // Change image every 4 seconds
-        }
-
-        // Scroll to reveal
-        window.addEventListener('scroll', reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
-                }
-            }
-        }
-
-        // Hamburger menu
-        const menuIcon = document.getElementById('menu-icon');
-        const hiddenMenu = document.getElementById('hidden-menu');
-
-        menuIcon.addEventListener('click', () => {
-            hiddenMenu.classList.toggle('taskbar__hidden-menu--visible');
-        });
-
-        // Back to top button
-        var mybutton = document.getElementById("back-to-top-btn");
-
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ABOUT LOT.CO.UK</h3>
+                <p>Without the fuss or unpredictability of the auction house, design lovers use LOT to buy and sell
+                    high-quality modern designer furniture ...</p>
+            </div>
+            <section class="footer-section">
+                <h3>JOIN US</h3>
+                <ul>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook"
+                                width="30"></a></li>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Pinterest"
+                                width="30"></a></li>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Instagram"
+                                width="30"></a></li>
+                </ul>
+            </section>
+            <section class="footer-section">
+                <h3>NEWSLETTER</h3>
+                <p>Tap into the minds of LOT's curators. Receive design inspiration for your next project.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Email address">
+                    <button>SUBMIT</button>
+                </div>
+            </section>
+        </div>
+        <footer class="footer-bottom">
+            <div class="contact-container">
+                <a href="#">About</a>
+                <a href="#">List An Item</a>
+                <a href="#">Adjust Your Listing</a>
+                <a href="#">Seller Resources</a>
+                <a href="#">Design Inspiration</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="payment-icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/217/217415.png" alt="Amex">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Apple Pay">
+                <img src="https://cdn-icons-png.flaticon.com/512/888/888870.png" alt="Diners Club">
+                <img src="https://cdn-icons-png.flaticon.com/512/888/888839.png" alt="Discover">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="PayPal">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196571.png" alt="Shopify">
+                <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="UnionPay">
+                <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="Visa">
+            </div>
+        </footer>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
