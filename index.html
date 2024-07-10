@@ -39,57 +39,146 @@
                 </div>
             </div>
             <div class="header__center">
-                <h1 class="header__title">LOT</h1>
+                <a href="#homepage">
+                    <h1 class="header__title">LOT</h1>
+                </a>
             </div>
             <div class="header__right">
                 <a href="#facebook" class="header__link"><img src=".\assets\social-media.png" alt="Facebook"
                         class="header__icon" id="facebook"></a>
                 <a href="#instagram" class="header__link"><img src="./assets/instagram.png" alt="Instagram"
                         class="header__icon" id="instagram"></a>
+
                 <select class="dropdown header__dropdown" style="font-size: larger;">
                     <option>GBP</option>
                     <option selected>USD</option>
                     <option>EUR</option>
                 </select>
-                <a href="#search" class="header__link"><img src=".\assets\search-interface-symbol.png" alt="Search"
-                        class="header__icon" id="search"></a>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="What are you looking for?"
+                        style="display: none;">
+                    <section class="header__link search-icon">
+                        <img src=".\assets\search-interface-symbol.png" alt="Search" class="header__icon" id="search">
+                    </section>
+                </div>
+
                 <a href="#profile" class="header__link"><img src=".\assets\user.png" alt="Profile" class="header__icon"
                         id="profile"></a>
-                <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
-                        class="header__icon" id="cart"></a>
+                <!-- <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
+                        class="header__icon" id="cart"></a> -->
+                <div class="header__link cart-icon">
+                    <img src=".\assets\shopping-bag.png" alt="Cart" class="header__icon" id="cart">
+                </div>
+
+                <div class="cart-mini-sidebar" id="cartSidebar">
+                    <div class="cart-mini-header">
+                        <span>YOUR CART</span>
+                        <button class="cart-mini-header-close" aria-label="close">&times;</button>
+                    </div>
+
+                    <div class="cart-mini-content">
+                        <div class="cart-mini-empty">
+                            You don't have any items in your cart yet.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overlay" id="overlay"></div>
             </div>
         </div>
-        <!-- hambuger menu reponsive -->
         <nav class="repo__header">
-            <div class="header-left--repo">
-                <button class="menu-icon">&#9776;</button>
-                <!-- <span class="search-icon">&#128269;</span> -->
-                <a href="#search" class="header__link"><img src=".\assets\search-interface-symbol.png" alt="Search"
-                        class="header__icon" id="search-repo"></a>
+            <div class="header-icons--repo">
+                <button class="menu-icon" id="menuToggle">&#9776;</button>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="What are you looking for?"
+                        style="display: none;">
+                    <section class="header__link search-icon">
+                        <img src=".\assets\search-interface-symbol.png" alt="Search" class="header__icon"
+                            id="search-repo">
+                    </section>
+                </div>
             </div>
-            <div class="logo">LOT</div>
-            <div class="header-icons-repo">
-                <!-- <span class="user-icon">&#128100;</span>
-                <span class="cart-icon">&#128722;</span> -->
-                <a href="#profile" class="header__link"><img src=".\assets\user.png" alt="Profile" class="header__icon"
+            <div class="header__center--repo">
+                <a href="#homepage">
+                    <h1 class="header__title">LOT</h1>
+                </a>
+            </div>
+            <section class="header-right--repo">
+                <a href="#profile" class="header__link"><img src="./assets/user.png" alt="Profile" class="header__icon"
                         id="profile-repo"></a>
-                <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
+                <a href="#cart" class="header__link"><img src="./assets/shopping-bag.png" alt="Cart"
                         class="header__icon" id="cart-repo"></a>
-            </div>
+            </section>
         </nav>
+        <div id="overlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <ul>
+                <li class="repo__dropdown">
+                    SHOP
+                    <ul class="repo__header__dropdown">
+                        <li><a href="#all-lots">All LOTs</a></li>
+                        <li></li><a href="#new-in">New In</a>
+                </li>
+                <li></li><a href="#featured">Featured</a></li>
+                <li></li><a href="#accessories">Accessories</a></li>
+            </ul>
+            </li>
+            <li class="repo__dropdown">
+                HOW TO
+                <ul class="repo__header__dropdown">
+                    <li><a href="#BuyonLOT">Buy on LOT</a></li>
+                    <li><a href="#SellonLOT">Sell on LOT</a></li>
+            </li><a href="#AdjustYourListing">Adjust Your Listing</a></li>
+            </ul>
+            </li>
+            <li class="repo__dropdown">
+                LIST AN ITEM
+                <ul class="repo__header__dropdown">
+                    <li><a href="#ManageYourListing">Manage Your Listing</a></li>
+                </ul>
+            </li>
+            </ul>
+            <div class="currency-selector">
+                <select class="currency-repo">
+                    <option>GBP</option>
+                    <option selected>USD</option>
+                    <option>EUR</option>
+                </select>
+            </div>
+            <div class="social-icons">
+                <a href="#facebook"><img src=".\assets\social-media.png" alt="Facebook" width="30"></a>
+                <a href="#instagram"><img src=".\assets\instagram.png" alt="Instagram" width="30"></a>
+            </div>
+        </div>
     </header>
     <!-- Slideshow container -->
-    <div id="homepage" class="slideshow-container">
+    <main id="homepage" class="slideshow-container">
         <div class="Slides fade">
-            <img src=".\assets\pexels-martinpechy-1866149.jpg" style="margin-left:5%; height:70%;width:90%">
+            <img src=".\assets\pexels-martinpechy-1866149.jpg" style="height:30%;width:100%">
+            <div class="overlay-content reveal">
+                <h1>Discover Iconic Designs</h1>
+                <p>In Our Collectible Editions</p>
+                <button class="cta-button">SHOP NOW</button>
+              </div>
         </div>
 
         <div class="Slides fade">
-            <img src=".\assets\pexels-ilya-shakir-1278798-2440471.jpg" style="margin-left:5% ;height: 70%;;width:90%">
+            <img src=".\assets\pexels-pixabay-276528.jpg" style="height: 30%;;width:100%">
+            <div class="overlay-content reveal">
+                <h1>Premium Listings</h1>
+                <p>Increase your chances of a quick safe with additional promition for your LOT item. </p>
+                <button class="cta-button">LEARN MORE</button>
+              </div>
         </div>
 
         <div class="Slides fade">
-            <img src=".\assets\pexels-kamo11235-667838.jpg" style="margin-left:5%; height:70%;width:90%">
+            <img src=".\assets\pexels-kamo11235-667838.jpg" style="height:30%;width:100%">
+            <div class="overlay-content reveal">
+                <h1>NO MORE AUTION HOUSES</h1>
+                <p>Buy and sell contemporary designer furniture effortlessly</p>
+                <button class="cta-button">BROWSE AVAILABLE LOTS</button>
+              </div>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -100,7 +189,7 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-    </div>
+    </main>
 
     <!-- Back to top button -->
     <button id="back-to-top-btn" onclick="topFunction()">⬆</button>
@@ -121,9 +210,7 @@
                 <ul>
                     <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook"
                                 width="30"></a></li>
-                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Pinterest"
-                                width="30"></a></li>
-                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Instagram"
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"
                                 width="30"></a></li>
                 </ul>
             </section>
@@ -132,7 +219,7 @@
                 <p>Tap into the minds of LOT's curators. Receive design inspiration for your next project.</p>
                 <div class="newsletter">
                     <input type="email" placeholder="Email address">
-                    <button>SUBMIT</button>
+                    <button class="submit">SUBMIT</button>
                 </div>
             </section>
         </div>

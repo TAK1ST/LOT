@@ -1,3 +1,59 @@
+// searchbar
+document.addEventListener('DOMContentLoaded', function() {
+    const searchIcon = document.querySelector('.search-icon');
+    const searchInput = document.querySelector('.search-input');
+  
+    searchIcon.addEventListener('click', function(e) {
+      e.preventDefault();
+      searchInput.style.display = 'block';
+      searchInput.classList.add('active');
+      searchInput.focus();
+    });
+  
+    searchInput.addEventListener('blur', function() {
+      if (this.value === '') {
+        this.classList.remove('active');
+        setTimeout(() => {
+          this.style.display = 'none';
+        }, 300); // Match this to the CSS transition time
+      }
+    });
+  });
+
+// show cart 
+document.addEventListener('DOMContentLoaded', function() {
+    const cartIcon = document.querySelector('.cart-icon');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const closeButton = document.querySelector('.cart-mini-header-close');
+    const overlay = document.getElementById('overlay');
+  
+    function openCart() {
+      cartSidebar.classList.add('active');
+      overlay.style.display = 'block';
+    }
+  
+    function closeCart() {
+      cartSidebar.classList.remove('active');
+      overlay.style.display = 'none';
+    }
+  
+    cartIcon.addEventListener('click', function(e) {
+      e.preventDefault();
+      openCart();
+    });
+  
+    closeButton.addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+  
+    // Optional: Close cart on escape key press
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && cartSidebar.classList.contains('active')) {
+        closeCart();
+      }
+    });
+  });
+  
+// slideshow
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -72,13 +128,50 @@ function reveal() {
 }
 
 // Hamburger menu
-const menuIcon = document.getElementById('menu-icon');
-const hiddenMenu = document.getElementById('hidden-menu');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+    const expandableItems = document.querySelectorAll('.repo__dropdown');
 
-menuIcon.addEventListener('click', () => {
-    hiddenMenu.classList.toggle('taskbar__hidden-menu--visible');
+    function openMenu() {
+        sideMenu.classList.add('active');
+        overlay.style.display = 'block';
+    }
+
+    function closeMenu() {
+        sideMenu.classList.remove('active');
+        overlay.style.display = 'none';
+    }
+
+    menuToggle.addEventListener('click', function(event) {
+        event.stopPropagation();
+        openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    document.body.addEventListener('click', function(event) {
+        if (!sideMenu.contains(event.target) && event.target !== menuToggle) {
+            closeMenu();
+        }
+    });
+
+    sideMenu.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    expandableItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.stopPropagation();
+            this.classList.toggle('active');
+            const submenu = this.querySelector('.repo__header__dropdown');
+            if (submenu) {
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
 });
-
 // Back to top button
 var mybutton = document.getElementById("back-to-top-btn");
 
