@@ -461,6 +461,9 @@ footer {
     .header__title {
         font-size: 3em;
     }
+    .header-icons--repo{
+        display: flex;
+    }
     /* slideshow */
     .overlay-content {
         position: absolute;
