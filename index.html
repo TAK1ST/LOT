@@ -50,23 +50,22 @@
                         class="header__icon" id="instagram"></a>
 
                 <select class="dropdown header__dropdown" style="font-size: larger;">
-                    <option>GBP</option>
-                    <option selected>USD</option>
+                    <option selected>GBP</option>
+                    <option>USD</option>
                     <option>EUR</option>
                 </select>
 
-                <div class="search-container">
+                <section class="search-container">
                     <input type="text" class="search-input" placeholder="What are you looking for?"
                         style="display: none;">
-                    <section class="header__link search-icon">
+                    <div class="header__link search-icon">
                         <img src=".\assets\search-interface-symbol.png" alt="Search" class="header__icon" id="search">
-                    </section>
-                </div>
+                    </div>
+                </section>
 
                 <a href="#profile" class="header__link"><img src=".\assets\user.png" alt="Profile" class="header__icon"
                         id="profile"></a>
-                <!-- <a href="#cart" class="header__link"><img src=".\assets\shopping-bag.png" alt="Cart"
-                        class="header__icon" id="cart"></a> -->
+
                 <div class="header__link cart-icon">
                     <img src=".\assets\shopping-bag.png" alt="Cart" class="header__icon" id="cart">
                 </div>
@@ -91,11 +90,13 @@
             <div class="header-icons--repo">
                 <button class="menu-icon" id="menuToggle">&#9776;</button>
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="What are you looking for?"
-                        style="display: none;">
-                    <section class="header__link search-icon">
-                        <img src=".\assets\search-interface-symbol.png" alt="Search" class="header__icon"
-                            id="search-repo">
+                    <section class="search-container">
+                        <input type="text" class="search-input" placeholder="What are you looking for?"
+                            style="display: none;">
+                        <div class="header__link search-icon">
+                            <img src=".\assets\search-interface-symbol.png" alt="Search" class="header__icon"
+                                id="search-repo">
+                        </div>
                     </section>
                 </div>
             </div>
@@ -107,8 +108,22 @@
             <section class="header-right--repo">
                 <a href="#profile" class="header__link"><img src="./assets/user.png" alt="Profile" class="header__icon"
                         id="profile-repo"></a>
-                <a href="#cart" class="header__link"><img src="./assets/shopping-bag.png" alt="Cart"
-                        class="header__icon" id="cart-repo"></a>
+
+                <div class="header__link cart-icon">
+                    <img src=".\assets\shopping-bag.png" alt="Cart" class="header__icon" id="cart-repo">
+                </div>
+                <div class="cart-mini-sidebar" id="cartSidebar">
+                    <div class="cart-mini-header">
+                        <span>YOUR CART</span>
+                        <button class="cart-mini-header-close" aria-label="close">&times;</button>
+                    </div>
+
+                    <div class="cart-mini-content">
+                        <div class="cart-mini-empty">
+                            You don't have any items in your cart yet.
+                        </div>
+                    </div>
+                </div>
             </section>
         </nav>
         <div id="overlay" class="overlay"></div>
@@ -160,7 +175,7 @@
                 <h1>Discover Iconic Designs</h1>
                 <p>In Our Collectible Editions</p>
                 <button class="cta-button">SHOP NOW</button>
-              </div>
+            </div>
         </div>
 
         <div class="Slides fade">
@@ -169,7 +184,7 @@
                 <h1>Premium Listings</h1>
                 <p>Increase your chances of a quick safe <br> with additional promition for your LOT item. </p>
                 <button class="cta-button">LEARN MORE</button>
-              </div>
+            </div>
         </div>
 
         <div class="Slides fade">
@@ -178,7 +193,7 @@
                 <h1>NO MORE AUTION HOUSES</h1>
                 <p>Buy and sell contemporary designer furniture effortlessly</p>
                 <button class="cta-button">BROWSE AVAILABLE LOTS</button>
-              </div>
+            </div>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -190,7 +205,107 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </main>
+    <!-- information pape -->
+    <main class="center">
+        <div class="header__shopping--intro reveal">
+            <h1 class="header__shopping--title">WHAT IS LOT?</h1>
+            <p>
+                LOT is a simple way of buying designer furniture from other caring owners.<br>
+                The brainchild of entrepreneur Kate Groes, LOT is an online edited marketplace where high-quality
+                modern
+                designer furniture can be sold and bought from a trusted source, without the fuss or unpredictability of
+                the
+                auction house.
+            </p>
+        </div>
+        <section class="header__shopping-section reveal">
+            <h1 class="header__shopping--title">SHOPPING WITH LOT</h1>
+            <div class="header__shopping-icons">
+                <div class="header__icon-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/modern-furniture-icon_192x192.png?v=1613719722.png"
+                        alt="Furniture" class="icon">
+                    <span class="center__icon-text">High-Quality Modern Designer Furniture</span>
+                </div>
+                <div class="header__icon-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/Icon-Design-Lovers_224x224-nw_192x192.jpg?v=1701214918"
+                        alt="Seller" class="icon">
+                    <span class="header__icon-text">Sold By Design Lovers</span>
+                </div>
+                <div class="header__icon-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/Icon-curated_224x224-nw_192x192.jpg?v=1701215517"
+                        alt="Curation" class="icon">
+                    <span class="header__icon-text">Curated By LOT's Design Experts</span>
+                </div>
+                <div class="header__icon-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/Icon-Delivery_224x224-NW_192x192.jpg?v=1701215161"
+                        alt="Delivery" class="icon">
+                    <span class="center__icon-text">MANAGED DELIVERY</span>
+                </div>
+            </div>
+        </section>
+        <section class="center__shopping-section reveal">
+            <h1 class="header__shopping--title">NEW IN</h1>
+            <div class="center__product-newIn">
+                <div class="center__product-item">
+                    <img src="https://lot.co.uk/cdn/shop/products/766815352c35d3602f43e7b08670c89c_750x649.jpg?v=1706724910"
+                        alt="" id="sofa">
+                    <div class="product-info">
+                        <div class="product-title">LOT 04128</div>
+                        <div class="product-title">SOFAS & STUFF/// NOT LISTED ///</div>
+                        <div class="product-title">Sofas & Stuff 4 Seater Sofa</div>
+                        <div class="product-price">£1,200.00</div>
+                        <div class="button-container">
+                            <button class="button view-lot">VIEW LOT</button>
+                            <button class="button add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="center__product-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/photography-studio_896x1344.jpg?v=1701390027"
+                        alt="" id="PHOTOGRAPHY">
+                    <div class="product-info">
+                        <div class="product-title">LOT 04128</div>
+                        <div class="product-title">PHOTOGRAPHY & STUDIO/// NOT LISTED ///</div>
+                        <div class="product-title">PHOTOGRAPHY & STUDIO</div>
+                        <div class="product-price">£1,500.00</div>
+                        <div class="button-container">
+                            <button class="button view-lot">VIEW LOT</button>
+                            <button class="button add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="center__product-item">
+                    <img src="https://lot.co.uk/cdn/shop/products/ddfa7255cc8f1822740bb4835676830c_1088x640.jpg?v=1706561105"
+                        alt="" id="DRUM">
+                    <div class="product-info">
+                        <div class="product-title">LOT 04128</div>
+                        <div class="product-title">DRUM/// NOT LISTED ///</div>
+                        <div class="product-title">DRUM</div>
+                        <div class="product-price">£200.00</div>
+                        <div class="button-container">
+                            <button class="button view-lot">VIEW LOT</button>
+                            <button class="button add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="center__product-item">
+                    <img src="https://lot.co.uk/cdn/shop/files/Armchair-Measure-LOT-green_1056x640.png?v=1701215722"
+                        alt="CHAIR">
+                    <div class="product-info">
+                        <div class="product-title">LOT 04128</div>
+                        <div class="product-title">CHAIR/// NOT LISTED ///</div>
+                        <div class="product-title">CHAIR</div>
+                        <div class="product-price">£5,400.00</div>
+                        <div class="button-container">
+                            <button class="button view-lot">VIEW LOT</button>
+                            <button class="button add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+    </main>
     <!-- Back to top button -->
     <button id="back-to-top-btn" onclick="topFunction()">⬆</button>
 
