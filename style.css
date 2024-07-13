@@ -774,6 +774,7 @@ footer {
     }
     .header__shopping-icons {
         display: flex;
+        justify-content: space-around;
     }
     .product-title {
         font-size: 1em;
