@@ -768,6 +768,7 @@ footer {
         grid-template-columns: repeat(2, 2fr);
         gap: 20px;
     }
+    
     #sofa,#PHOTOGRAPHY,#DRUM{
         height:200px;
     }
